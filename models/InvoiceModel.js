@@ -1,8 +1,8 @@
 import { DataTypes } from "sequelize";
 import db from "../utils/connection.js";
 
-const Vehicle = db.define(
-    "Vehicle",
+const Invoice = db.define(
+    "Invoice",
     {
         id: {
             type: DataTypes.INTEGER,
@@ -10,22 +10,18 @@ const Vehicle = db.define(
             autoIncrement: true,
             allowNull: false,
         },
-        brand: {
-            type: DataTypes.STRING,
+        invoiceNumber: {
+            type: DataTypes.INTEGER,
             allowNull: false,
         },
-        model: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        price: {
-            type: DataTypes.FLOAT,
+        totalAmount: {
+            type: DataTypes.INTEGER,
             allowNull: false
         },
     },
     {
-        tableName: "vehicle"
+        tableName: "invoice"
     }
 );
 
-export default Vehicle;
+export default Invoice;

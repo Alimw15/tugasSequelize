@@ -14,12 +14,12 @@ const SalesPerson = db.define(
             type: DataTypes.STRING,
             allowNull: false,
         },
-        phonenumber: {
-            type: DataTypes.INTEGER,
+        email: {
+            type: DataTypes.STRING,
             allowNull: false
         },
-        commisionrate: {
-            type: DataTypes.FLOAT,
+        phone: {
+            type: DataTypes.INTEGER,
             allowNull: false
         }
     },

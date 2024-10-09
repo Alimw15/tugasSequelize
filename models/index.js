@@ -1,9 +1,9 @@
 import db from "../utils/connection.js";
 import Customer from "./CustomerModel.js";
-import Payment from "./PaymentModel.js";
-import Order from "./OrderModel.js";
 import SalesPerson from "./SalesPersonModel.js";
-import Vehicle from "./VehicleModel.js";
+import Order from "./OrderModel.js";
+import Car from "./CarModel.js";
+import Invoice from "./InvoiceModel.js";
 
 // await Customer.sync();
 // await Payment.sync();
@@ -16,50 +16,39 @@ Customer.hasMany(Order, {
   onDelete: "CASCADE",
   onUpdate: "CASCADE",
 });
-
-Vehicle.hasMany(Order, {
-  onDelete: "CASCADE",
-  onUpdate: "CASCADE",
-});
-
-SalesPerson.hasMany(Order, {
-  onDelete: "CASCADE",
-  onUpdate: "CASCADE",
-});
-
-Order.hasOne(Payment, {
+Order.belongsTo(Customer, {
   onDelete: "CASCADE",
   onUpdate: "CASCADE",
 })
 
-Order.belongsTo(Customer, {
-  foreignKey: "CustomerId",
+SalesPerson.hasMany(Order, {
   onDelete: "CASCADE",
   onUpdate: "CASCADE",
-});
-
-Order.belongsTo(Vehicle, {
-  foreignKey: "VehicleId",
-  onDelete: "CASCADE",
-  onUpdate: "CASCADE",
-});
-
+})
 Order.belongsTo(SalesPerson, {
-  foreignKey: "SalesPersonId",
   onDelete: "CASCADE",
   onUpdate: "CASCADE",
-});
+})
 
-Order.hasOne(Payment, {
+Car.belongsToMany(Order, {
+  through: "orderCar",
   onDelete: "CASCADE",
   onUpdate: "CASCADE",
-});
+})
+Order.belongsToMany(Car, {
+  through: "orderCar",
+  onDelete: "CASCADE",
+  onUpdate: "CASCADE",
+})
 
-Payment.belongsTo(Order, {
-  foreignKey: "OrderId",
+Order.hasOne(Invoice, {
   onDelete: "CASCADE",
   onUpdate: "CASCADE",
-});
+})
+Invoice.belongsTo(Order, {
+  onDelete: "CASCADE",
+  onUpdate: "CASCADE",
+})
 
 // await db.sync({force: true})
 await db.sync();

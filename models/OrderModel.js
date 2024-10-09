@@ -10,13 +10,9 @@ const Order = db.define(
             autoIncrement: true,
             allowNull: false,
         },
-        orderdate: {
+        orderDate: {
             type: DataTypes.DATE,
             allowNull: false,
-        },
-        orderamount: {
-            type: DataTypes.INTEGER,
-            allowNull: false
         },
     },
     {

@@ -18,8 +18,8 @@ const Customer = db.define(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    address: {
-      type: DataTypes.STRING,
+    phone: {
+      type: DataTypes.INTEGER,
       allowNull: false,
     },
   },

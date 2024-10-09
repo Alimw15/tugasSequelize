@@ -1,8 +1,8 @@
 import { DataTypes } from "sequelize";
 import db from "../utils/connection.js";
 
-const Payment = db.define(
-    "Payment",
+const Car = db.define(
+    "Car",
     {
         id: {
             type: DataTypes.INTEGER,
@@ -10,18 +10,22 @@ const Payment = db.define(
             autoIncrement: true,
             allowNull: false,
         },
-        paymentdate: {
-            type: DataTypes.DATE,
+        brand: {
+            type: DataTypes.STRING,
             allowNull: false,
         },
-        amountpaid: {
-            type: DataTypes.FLOAT,
+        model: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        price: {
+            type: DataTypes.STRING,
             allowNull: false
         },
     },
     {
-        tableName: "payment"
+        tableName: "car"
     }
 );
 
-export default Payment;
+export default Car;

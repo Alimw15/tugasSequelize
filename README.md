@@ -13,31 +13,31 @@ API Sistem Manajemen Penjualan Mobil adalah sebuah RESTful API yang dikembangkan
 
 # FITUR
 
-# 1. CRUD Vehicle (Mobil)
-- Create: Tambahkan mobil baru ke dalam inventaris, termasuk atribut seperti vehicleId, brand, model, dan vehicle (jenis kendaraan).
-- Read: Lihat informasi tentang kendaraan yang ada di dalam inventaris, seperti merek, model, dan tipe kendaraan.
-- Update: Perbarui detail kendaraan, seperti perubahan merek, model, atau jenis kendaraan.
+# 1. CRUD Car (Mobil)
+- Create: Tambahkan mobil baru ke dalam inventaris, termasuk atribut seperti id, brand, model, dan price.
+- Read: Lihat informasi tentang mobil yang ada di dalam inventaris, seperti merek, model, dan harga.
+- Update: Perbarui detail mobil, seperti perubahan merek, model, atau harga.
 - Delete: Hapus mobil dari inventaris jika sudah tidak tersedia lagi atau telah terjual.
 # 2. CRUD Order (Pesanan)
-- Create: Buat pesanan baru yang berisi informasi seperti orderId, orderDate, orderAmount, serta relasi dengan customerId, vehicleId, dan salesPersonId.
-- Read: Ambil atau lihat daftar pesanan yang ada, bisa difilter berdasarkan pelanggan, kendaraan, atau penjual.
-- Update: Perbarui detail pesanan, seperti jumlah pesanan atau mengganti kendaraan yang dipesan jika ada perubahan.
+- Create: Buat pesanan baru yang berisi informasi seperti id, orderDate, serta relasi dengan CustomerId, CarId, dan SalesPersonId.
+- Read: Ambil atau lihat daftar pesanan yang ada, bisa difilter berdasarkan pelanggan, mobil, atau penjual.
+- Update: Perbarui detail pesanan, seperti tanggal pesanan atau mengganti mobil yang dipesan jika ada perubahan.
 - Delete: Hapus pesanan jika transaksi dibatalkan atau terjadi kesalahan pada data pesanan.
 # 3. CRUD Customer (Pelanggan)
-- Create: Tambahkan pelanggan baru ke dalam sistem dengan atribut seperti customerId, name, email, dan address.
-- Read: Ambil atau lihat detail pelanggan, seperti nama, alamat, dan email, serta riwayat pesanan yang mereka lakukan.
-- Update: Perbarui informasi pelanggan, seperti perubahan alamat atau nomor kontak.
+- Create: Tambahkan pelanggan baru ke dalam sistem dengan atribut seperti id, name, email, dan phone.
+- Read: Ambil atau lihat detail pelanggan, seperti nama, email, dan nomor telepon, serta riwayat pesanan yang mereka lakukan.
+- Update: Perbarui informasi pelanggan, seperti perubahan email atau nomor kontak.
 - Delete: Hapus data pelanggan dari sistem jika tidak lagi diperlukan atau mereka sudah tidak aktif.
 # 4. CRUD SalesPerson (Sales/ Pegawai Penjual)
-- Create: Tambahkan data pegawai penjual baru dengan atribut seperti salesPersonId, name, phoneNumber, dan commisionRate.
-- Read: Ambil informasi tentang penjual, termasuk nama, nomor telepon, dan persentase komisi penjualan yang mereka terima.
-- Update: Perbarui informasi pegawai, seperti nomor telepon atau tingkat komisi.
+- Create: Tambahkan data pegawai penjual baru dengan atribut seperti id, name, email, dan phone.
+- Read: Ambil informasi tentang penjual, termasuk nama, email, dan nomor telepon.
+- Update: Perbarui informasi pegawai, seperti email atau nomor telepon.
 - Delete: Hapus data pegawai jika mereka sudah tidak bekerja lagi atau tidak diperlukan.
-# 5. CRUD Payment (Pembayaran)
-- Create: Tambahkan pembayaran baru untuk pesanan yang sudah dilakukan, dengan atribut seperti paymentId, paymentDate, paymentAmount, dan relasi ke orderId.
-- Read: Lihat daftar pembayaran yang ada atau detail pembayaran untuk pesanan tertentu.
-- Update: Perbarui informasi pembayaran, seperti jumlah yang dibayar atau tanggal pembayaran jika ada perubahan.
-- Delete: Hapus pembayaran jika terdapat kesalahan input atau pembayaran dibatalkan.
+# 5. CRUD Invoice (Faktur)
+- Create: Tambahkan faktur baru untuk pesanan yang sudah dilakukan, dengan atribut seperti id, invoiceNumber, totalAmount, dan relasi ke OrderId.
+- Read: Lihat daftar faktur yang ada atau detail faktur untuk pesanan tertentu.
+- Update: Perbarui informasi faktur, seperti jumlah total atau nomor faktur jika ada perubahan.
+- Delete: Hapus faktur jika terdapat kesalahan input atau faktur dibatalkan.
 
 ## Dependencies / Teknologi yang digunakan
 
@@ -135,4 +135,3 @@ API Sistem Manajemen Penjualan Mobil adalah sebuah RESTful API yang dikembangkan
 
 Terima Kasih
 
- 

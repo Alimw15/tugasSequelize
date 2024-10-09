@@ -25,8 +25,8 @@ export const getSalesPersonById = async (req, res) => {
 
 export const createSalesPerson = async (req, res) => {
     try {
-        const { name, phonenumber, commisionrate } = req.body;
-        const salesperson = await SalesPerson.create({ name, phonenumber, commisionrate });
+        const { name, email, phone } = req.body;
+        const salesperson = await SalesPerson.create({ name, email, phone });
         res.status(201).json({
             message: "SalesPerson berhasil dibuat",
             data: salesperson
@@ -41,8 +41,8 @@ export const createSalesPerson = async (req, res) => {
 
 export const updateSalesPerson = async (req, res) => {
     try {
-        const { name, phonenumber, commisionrate } = req.body
-        const data = await SalesPerson.update({ name, phonenumber, commisionrate }, {
+        const { name, email, phone } = req.body
+        const data = await SalesPerson.update({ name, email, phone }, {
             where: {
                 id: req.params.id
             }

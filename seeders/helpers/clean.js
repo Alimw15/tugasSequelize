@@ -1,8 +1,8 @@
 import Customer from "../../models/CustomerModel.js";
-import Payment from "../../models/PaymentModel.js";
-import Order from "../../models/OrderModel.js";
 import SalesPerson from "../../models/SalesPersonModel.js";
-import Vehicle from "../../models/VehicleModel.js";
+import Car from "../../models/CarModel.js";
+import Invoice from "../../models/InvoiceModel.js";
+import Order from "../../models/OrderModel.js";
 
 export default async function clean() {
   await Customer.destroy({
@@ -10,12 +10,12 @@ export default async function clean() {
     force: true,
     cascade: true,
   });
-  await Payment.destroy({
+  await Car.destroy({
     where: {},
     force: true,
     cascade: true,
   });
-  await Order.destroy({
+  await Invoice.destroy({
     where: {},
     force: true,
     cascade: true,
@@ -25,7 +25,7 @@ export default async function clean() {
     force: true,
     cascade: true,
   });
-  await Vehicle.destroy({
+  await Order.destroy({
     where: {},
     force: true,
     cascade: true,
