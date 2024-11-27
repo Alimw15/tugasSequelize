@@ -4,8 +4,13 @@ import { createOrder, deleteOrder, getAllOrder, getOrderById, updateOrder } from
 import { createSalesPerson, deleteSalesPerson, getAllSalesPerson, getSalesPersonById, updateSalesPerson } from "../controller/SalesPerson.js";
 import { getAllInvoice, getInvoiceById, createInvoice, updateInvoice, deleteInvoice } from "../controller/InvoiceController.js";
 import { getAllCar, getCarById, createCar, updateCar, deleteCar } from "../controller/CarController.js";    
+import { login, register } from "../controller/AuthController.js";
+import { verifytoken } from "../middleware/AuthMiddleware.js";
 
 const router = express.Router();
+
+router.post("/login", login);
+router.post("/register", register)
 
 router.get("/customer", getAllCustomer);
 router.get("/customer/:id", getCustomerById);
@@ -19,7 +24,7 @@ router.post("/createInvoice", createInvoice);
 router.put("/updateInvoice/:id", updateInvoice);
 router.delete("/deleteInvoice/:id", deleteInvoice);
 
-router.get("/car", getAllCar);
+router.get("/car", verifytoken, getAllCar);
 router.get("/car/:id", getCarById);
 router.post("/createCar", createCar);
 router.put("/updateCar/:id", updateCar);
